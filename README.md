@@ -1,4 +1,4 @@
-````markdown
+```markdown
 # KEEG
 ## Kinetic Entropy Execution Gating
 
@@ -420,4 +420,4 @@ MIT License
 
 cybersecurity, entropy-analysis, malware-analysis, behavioral-analysis, runtime-security, process-monitoring, fileless-malware, memory-analysis, epsd, threat-detection, edr, blue-team, soc, information-security
 
-````
+```
