@@ -1,74 +1,423 @@
-# KEEG - Kinetic Entropy Execution Gating
+````markdown
+# KEEG
+## Kinetic Entropy Execution Gating
 
-KEEG is a runtime behavioral cybersecurity framework that detects malicious activity using entropy kinetics and behavioral analysis instead of traditional malware signatures.
+> Runtime Behavioral Security Framework powered by Entropy Kinetics, EPSD Phase-Shift Detection, Process Lineage Correlation, and Memory Execution Analysis.
 
-It continuously monitors running processes, tracks entropy phase-shifts (EPSD), analyzes process lineage, detects RWX executable memory regions, and correlates multiple runtime threat signals to identify suspicious activity in real time.
+![Python](https://img.shields.io/badge/Python-3.10%2B-blue)
+![Platform](https://img.shields.io/badge/Platform-Linux%20%7C%20Windows%20%7C%20macOS-black)
+![License](https://img.shields.io/badge/License-MIT-green)
+![Status](https://img.shields.io/badge/Status-Research%20Prototype-orange)
+![Domain](https://img.shields.io/badge/Domain-Cybersecurity-red)
 
-## Features
+---
 
-- Shannon entropy analysis
+# Overview
 
-- EPSD (Entropy Phase-Shift Detection)
+KEEG is a mathematically grounded runtime behavioral security framework designed to detect malicious process activity using entropy kinetics instead of traditional malware signatures.
 
-- Sliding-window entropy scanning
+Unlike conventional antivirus systems that rely on static indicators and known threat databases, KEEG continuously analyzes runtime process behavior through:
 
-- Process lineage anomaly detection
+- Shannon entropy dynamics
+- Entropy phase-shift detection (EPSD)
+- Sliding-window entropy analysis
+- Process lineage correlation
+- RWX executable memory detection
+- Compound multi-signal threat correlation
 
-- RWX memory detection
+KEEG focuses on identifying *behavioral anomalies* associated with:
+- Encrypted payload execution
+- Fileless malware
+- In-memory unpacking
+- Shellcode injection
+- Process hollowing
+- Runtime decryption activity
+- Suspicious parent-child process chains
 
-- Compound threat correlation
+---
 
-- SOC-style monitoring dashboard
+# Core Research Concept
 
-- JSON / CSV / SIEM-compatible reports
+Traditional detection systems ask:
 
-- Threat simulation engine
+> "Have I seen this malware before?"
 
-## Technologies
+KEEG asks:
 
-- Python 3
+> "Does this process behave like malware?"
 
-- Flask
+The framework introduces a behavioral primitive called:
 
-- psutil
+# EPSD — Entropy Phase-Shift Detection
 
-- Chart.js
+EPSD monitors entropy changes across time instead of relying on static entropy snapshots.
 
-## Installation
+A sudden entropy phase-shift often indicates:
+- payload unpacking
+- runtime decryption
+- encrypted shellcode activation
+- memory injection
 
+This enables detection of behavior that signature engines cannot identify.
+
+---
+
+# Detection Pipeline
+
+```text
+Process Enumeration
+        ↓
+Memory Sampling
+        ↓
+Shannon Entropy Analysis
+        ↓
+EPSD Kinetic Analysis
+        ↓
+Sliding Window Analysis
+        ↓
+RWX Memory Inspection
+        ↓
+Process Lineage Correlation
+        ↓
+Compound Threat Scoring
+        ↓
+ALLOW / WARN / FLAG
 ```
+
+---
+
+# Features
+
+## Runtime Behavioral Detection
+- Real-time process monitoring
+- Mathematical entropy analysis
+- Runtime memory inspection
+- Entropy kinetics tracking
+
+## EPSD Engine
+- Entropy delta computation
+- Velocity analysis
+- Acceleration analysis
+- Phase-shift identification
+- Slow-trend detection
+
+## Sliding Window Entropy Analysis
+- 256-byte segmented entropy analysis
+- Detects entropy padding evasion
+- Identifies hidden encrypted payloads
+
+## Process Lineage Correlation
+Detects suspicious ancestry chains such as:
+
+```text
+winword.exe → powershell.exe
+acrobat.exe → bash
+firefox.exe → cmd.exe
+excel.exe → powershell.exe
+```
+
+## RWX Memory Detection
+- Detects executable writable memory regions
+- Identifies shellcode injection indicators
+- JIT-aware suppression system
+
+## Compound Threat Correlation
+Correlates:
+- EPSD spikes
+- RWX memory
+- Lineage anomalies
+- Network behavior
+
+Threat confidence levels:
+- NONE
+- LOW
+- MEDIUM
+- HIGH
+- CRITICAL
+
+## SOC-Style Dashboard
+Includes:
+- Entropy heatmaps
+- Risk distribution
+- Threat alerts
+- Process graph
+- Attack timeline
+- System logs
+- Entropy monitor
+
+## Reporting Engine
+Exports:
+- JSON
+- CSV
+- Human-readable investigation reports
+
+SIEM-compatible telemetry output.
+
+---
+
+# Dashboard Modules
+
+|     Module      |                Purpose                |
+|-----------------|---------------------------------------|
+| Dashboard       | System-wide security overview         |
+| Processes       | Sortable runtime process analysis     |
+| Entropy Monitor | EPSD timeline and kinetics            |
+| Threat Alerts   | Real-time security events             |
+| Process Graph   | Parent-child process topology         |
+| Attack Timeline | Chronological forensic reconstruction |
+| System Logs     | Raw telemetry stream                  |
+| Settings        | Detection thresholds and weights      |
+
+---
+
+# Technical Stack
+
+|      Component     |  Technology |
+|--------------------|-------------|
+| Language           | Python 3    |
+| Backend            | Flask       |
+| Process Inspection | psutil      |
+| Frontend Charts    | Chart.js    |
+| Dashboard          | HTML/CSS/JS |
+| Reporting          | JSON / CSV  |
+
+---
+
+# Installation
+
+## Clone Repository
+
+```bash
+git clone https://github.com/aswath00/KEEG.git
+cd KEEG
+```
+
+## Install Dependencies
+
+```bash
 pip install -r requirements.txt
 ```
 
-## Run
+---
 
+# Usage
+
+## Default Scan
+
+```bash
+python3 keeg_v3.1.py
 ```
-python3 keeg\_v3.1.py --monitor --dashboard
+
+## Single Scan
+
+```bash
+python3 keeg_v3.1.py --scan
+```
+
+## Continuous Monitoring
+
+```bash
+python3 keeg_v3.1.py --monitor
+```
+
+## Dashboard Mode
+
+```bash
+python3 keeg_v3.1.py --monitor --dashboard
 ```
 
 Open:
 
-```
+```text
 http://localhost:5000
 ```
 
-## Demo Mode
+---
 
-```
-python3 keeg\_v3.1.py --demo
-```
+# Demonstration Modes
 
-## Simulation Mode
+## Entropy Demonstration
 
-```
-python3 keeg\_v3.1.py --simulate
+```bash
+python3 keeg_v3_1_patched.py --demo
 ```
 
-## Project Type
+Shows:
+- entropy reference values
+- EPSD behavior
+- padding attack defense
+- detection comparison
 
-MCA Final Year Project - Cybersecurity Domain
+## Threat Simulation
 
-## License
+```bash
+python3 keeg_v3_1_patched.py --simulate
+```
+
+Simulates:
+- entropy spikes
+- payload decryption
+- RWX memory injection
+- lineage anomalies
+- compound escalation
+
+Ideal for:
+- presentations
+- research demos
+- viva demonstrations
+
+---
+
+# Detection Signals
+
+| Signal |            Meaning           |
+|--------|------------------------------|
+|  EPSD  | Entropy phase-shift detected |
+|  LIN   | Suspicious lineage chain     |
+|  RWX   | Executable writable memory   |
+|  WIN   | Sliding-window anomaly       |
+|  NET   | Active network activity      |
+
+---
+
+# Gate Verdicts
+
+| Verdict |            Meaning           |
+|---------|------------------------------|
+| ALLOW   | Normal runtime behavior      |
+| WARN    | Elevated suspicious activity |
+| FLAG    | Active threat indicator      |
+
+---
+
+# Example Threat Logic
+
+```text
+EPSD Spike + RWX + Lineage
+            ↓
+      CRITICAL Threat
+            ↓
+          FLAG
+```
+
+---
+
+# Research Focus
+
+KEEG explores:
+- entropy kinetics
+- runtime malware behavior
+- behavioral detection primitives
+- fileless malware analysis
+- memory-resident attack detection
+- process behavior analytics
+- runtime anomaly detection
+
+---
+
+# Performance
+
+- Lightweight architecture
+- No cloud dependency
+- No kernel driver
+- Offline capable
+- Low CPU usage
+- Minimal RAM footprint
+
+---
+
+# Supported Platforms
+
+|    OS   | Support |
+|---------|---------|
+| Linux   |   Yes   |
+| Windows |   Yes   |
+| macOS   |   Yes   |
+
+---
+
+# Current Limitations
+
+- Periodic scanning architecture
+- Fast transient processes may evade scan interval
+- Userland visibility only
+- Not a replacement for enterprise EDR
+
+---
+
+# Future Roadmap
+
+- Event-driven monitoring
+- Kernel-assisted telemetry
+- Multi-endpoint aggregation
+- Distributed policy management
+- Machine-learning-assisted baselining
+- Threat intelligence integration
+- Real-time remote monitoring
+- SIEM connectors
+
+---
+
+# Project Structure
+
+```text
+KEEG/
+├── keeg_log.json
+├── screenshots/
+├── keeg_v3.1.py
+├── requirements.txt
+├── README.md
+├── LICENSE
+└── .gitignore
+```
+---
+
+# Screenshots
+
+## Dashboard
+/screenshots/main_dashboard.png
+
+## Entropy Monitor
+/screenshots/entropy_monitor_tab.png
+
+## Process Graph
+/screenshots/process_graph.png
+
+## Threat Alerts
+threat_alerts_tab.png
+
+---
+
+# Security Notice
+
+KEEG is a research-oriented behavioral analysis framework intended for:
+- education
+- runtime analysis
+- malware research
+- security experimentation
+- academic research
+
+It is not intended to replace enterprise-grade endpoint protection systems.
+
+---
+
+# Author
+
+Ash
+
+MCA Final Year Project  
+Cybersecurity Domain
+
+---
+
+# License
 
 MIT License
 
+---
+
+# Keywords
+
+cybersecurity, entropy-analysis, malware-analysis, behavioral-analysis, runtime-security, process-monitoring, fileless-malware, memory-analysis, epsd, threat-detection, edr, blue-team, soc, information-security
+
+````
