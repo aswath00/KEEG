@@ -1,4 +1,3 @@
-```markdown
 # KEEG
 ## Kinetic Entropy Execution Gating
 
@@ -48,7 +47,7 @@ KEEG asks:
 
 The framework introduces a behavioral primitive called:
 
-# EPSD — Entropy Phase-Shift Detection
+# EPSD - Entropy Phase-Shift Detection
 
 EPSD monitors entropy changes across time instead of relying on static entropy snapshots.
 
@@ -419,5 +418,3 @@ MIT License
 # Keywords
 
 cybersecurity, entropy-analysis, malware-analysis, behavioral-analysis, runtime-security, process-monitoring, fileless-malware, memory-analysis, epsd, threat-detection, edr, blue-team, soc, information-security
-
-```
