@@ -2,13 +2,10 @@
 __pycache__/
 *.pyc
 venv/
-.env
-
-# Node
-node_modules/
 
 # Logs
 *.log
+*.json
 
 # Build
 dist/
@@ -23,7 +20,10 @@ build/
 
 # Secrets
 .env
-config/secrets.json
 
-# Database
-*.db
+# Cache
+.cache/
+
+# Temporary
+tmp/
+temp/
