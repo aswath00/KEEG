@@ -126,7 +126,7 @@ Correlates:
 - EPSD spikes
 - RWX memory
 - Lineage anomalies
-- Network behavior
+- Network behavior 
 
 Threat confidence levels:
 - NONE
