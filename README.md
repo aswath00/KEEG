@@ -239,7 +239,7 @@ http://localhost:5000
 ## Entropy Demonstration
 
 ```bash
-python3 keeg_v3_1_patched.py --demo
+python3 keeg_v3.1.py --demo
 ```
 
 Shows:
@@ -251,7 +251,7 @@ Shows:
 ## Threat Simulation
 
 ```bash
-python3 keeg_v3_1_patched.py --simulate
+python3 keeg_v3.1.py --simulate
 ```
 
 Simulates:
@@ -375,16 +375,16 @@ KEEG/
 # Screenshots
 
 ## Dashboard
-/screenshots/main_dashboard.png
+![Dashboard](screenshots/main_dashboard.png)
 
 ## Entropy Monitor
-/screenshots/entropy_monitor_tab.png
+![Entropy Monitor](screenshots/entropy_monitor_tab.png)
 
 ## Process Graph
-/screenshots/process_graph.png
+![Process Graph](screenshots/process_graph.png)
 
 ## Threat Alerts
-threat_alerts_tab.png
+![Threat Alerts](screenshots/threat_alerts_tab.png)
 
 ---
 
